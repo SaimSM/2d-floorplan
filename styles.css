@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#heading {
+    font-size: 2.5em;
+    color: #fff;
+    background: linear-gradient(135deg, #00bfff, #1e90ff);
+    padding: 20px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#viewer-container {
+    position: relative;
+}
+
+#floorplanCanvas {
+    border: 1px solid black;
+    width: 800px;
+    height: 600px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+/* Equipment Name Display */
+#equipment-name {
+    position: absolute;
+    top: 620px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #333;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for furniture */
+.furniture-hover {
+    stroke: #00bfff;
+    stroke-width: 2;
+    fill: rgba(0, 191, 255, 0.5);
+}
+
+/* Style for smooth hover transitions */
+.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive design */
+
+@media only screen and (max-width: 768px) {
+    #viewer-container {
+        flex-direction: column;
+    }
+
+    #floorplanCanvas {
+        width: 100%;
+        height: auto;
+    }
+
+    #equipment-name {
+        top: 40%;
+    }
+}
